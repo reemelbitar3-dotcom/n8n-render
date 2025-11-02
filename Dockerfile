@@ -1,9 +1,9 @@
-# Use the official n8n Docker image
-FROM n8nio/n8n
+FROM node:18
 
-# Expose the n8n port
+WORKDIR /data
+
+RUN npm install -g n8n
+
 EXPOSE 5678
 
-# Start n8n when the container runs
-CMD ["n8n"]
-
+CMD ["n8n", "start"]
